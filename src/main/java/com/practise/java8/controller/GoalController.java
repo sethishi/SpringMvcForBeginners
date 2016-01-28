@@ -23,6 +23,7 @@ public class GoalController {
 
         return "addGoal";
     }
+
     @RequestMapping(value = "/addGoal" , method = RequestMethod.POST)
     public String updateGoal(@ModelAttribute("goal") Goal goal){
 
