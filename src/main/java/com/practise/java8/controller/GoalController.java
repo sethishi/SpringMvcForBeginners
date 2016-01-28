@@ -19,11 +19,11 @@ public class GoalController {
     public String addGoal(Model model){
         Goal goal= new Goal();
         goal.setMinutes(10);
-
         model.addAttribute("goal",goal);
 
         return "addGoal";
     }
+
     @RequestMapping(value = "/addGoal" , method = RequestMethod.POST)
     public String updateGoal(@ModelAttribute("goal") Goal goal){
 
