@@ -14,7 +14,6 @@ public class HomeController {
         System.out.println(" Hello ");
 
         model.addAttribute("greeting","Hello World");
-
         return "hello";
 
     }
