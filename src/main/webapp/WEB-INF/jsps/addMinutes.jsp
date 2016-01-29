@@ -13,7 +13,7 @@
 </h1>
 
     Language : <a href="?language=en">English</a> | <a href="?language=_es">Spanish</a>
-<h2>    </h2>
+
 <form:form commandName="exercise">
     <table>
         <tr>
