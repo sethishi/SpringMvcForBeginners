@@ -12,40 +12,39 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
-/**
- * Created by sethishi on 29/01/2016.
- */
+
 @Controller
 @SessionAttributes("user")
 public class UserController {
 
-//    @RequestMapping(value = "/addUser", method = RequestMethod.GET)
-//    public String addUser(Model model) {
-//        User user = new User();
-//        user.setName("Shilpa");
-//        user.setEmail("hsdsd@gmal.com");
-//
-//        model.addAttribute(user);
-//
-//
-//        return "addUser";
-//    }
+    @RequestMapping(value = "/addUser", method = RequestMethod.GET)
+    public String addUserForm(Model model) {
+        User user = new User();
+        user.setName("username");
+        user.setEmail("email");
 
-
-
-    @RequestMapping(value = "/addUser", method = { RequestMethod.GET, RequestMethod.POST })
-    public String addUserOnly(@Valid @ModelAttribute("user") User user, Model model,
-                              BindingResult result, HttpServletRequest request)
-            throws ParseException {
-
-        if (result.hasErrors()){
-            System.out.println(" Error "+ result.hasErrors());
-            return "adduser";
-        }
+        model.addAttribute("userDetails","Enter User Details" );
         model.addAttribute(user);
-        return "redirect:addUser";
+
+        System.out.println("In Get ");
+        return "addUser";
     }
 
+
+
+    @RequestMapping(value = "/addUser", method = RequestMethod.POST )
+    public String addUserSubmit(@Valid @ModelAttribute("user") User user, BindingResult result) {
+
+        System.out.println("Result has error " + result.hasErrors());
+        if (result.hasErrors()) {
+            System.out.println(" Error " + result.hasErrors());
+            return "addUser";
+
+        }
+       // model.addAttribute(user);
+        return "redirect:addUser";
+
+    }
 }
 
 

@@ -24,18 +24,21 @@
     </style>
 </head>
 <body>
+<h1> ${userDetails} </h1>
+<h1> </h1>
 <form:form commandName="user">
     <form:errors path="*" cssClass="errorBlock" element="div"></form:errors>
     <table>
         <tr>
             <td><spring:message  code="user.name"/></td>
             <td><form:input path="name"/></td>
+            <td><form:errors path="name" cssClass="error"/></td>
 
         </tr>
         <tr>
             <td><spring:message  code="user.email"/></td>
             <td><form:input path="email"/></td>
-
+            <td><form:errors path="email" cssClass="error"/></td>
         </tr>
         <tr>
             <td colspan="2">

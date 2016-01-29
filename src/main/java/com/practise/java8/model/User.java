@@ -2,15 +2,20 @@ package com.practise.java8.model;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.constraints.Size;
 
 /**
  * Created by sethishi on 29/01/2016.
  */
 public class User {
 
-    @NotBlank
+    @NotEmpty
     private String name;
-    @Email @NotBlank
+
+    @NotEmpty(message = "Please enter your password.")
+    @Email(message = "Please enter a valid email.")
     private String email;
 
     public String getName() {
