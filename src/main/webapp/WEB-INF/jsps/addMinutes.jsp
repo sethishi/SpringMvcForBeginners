@@ -17,6 +17,9 @@
 <form:form commandName="exercise">
     <table>
         <tr>
+            <td>Current Locale : ${pageContext.response.locale}</td>
+        </tr>
+        <tr>
             <td><spring:message  code="goal.text"/></td>
             <td><form:input path="minutes"/></td>
 
