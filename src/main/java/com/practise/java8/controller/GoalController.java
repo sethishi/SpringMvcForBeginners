@@ -13,6 +13,7 @@ import javax.validation.Valid;
 
 
 @Controller
+@SessionAttributes("goal")
 public class GoalController {
 
     @RequestMapping(value="/addGoal", method = RequestMethod.GET)

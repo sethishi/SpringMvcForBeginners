@@ -11,10 +11,10 @@ import javax.validation.constraints.Size;
  */
 public class User {
 
-    @NotEmpty
+    @NotEmpty(message = "Username cannot be blank")
     private String name;
 
-    @NotEmpty(message = "Please enter your password.")
+    @NotEmpty(message = "Please enter your Email.")
     @Email(message = "Please enter a valid email.")
     private String email;
 
