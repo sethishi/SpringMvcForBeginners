@@ -22,6 +22,9 @@ public class MinutesController {
 
        // model.addAttribute("minutes","Added Minutes");
         System.out.println("exercise " + exercise.getMinutes() );
+        System.out.println("exercise activity " + exercise.getActivity() );
+
+
         return "addMinutes";
 
     }
